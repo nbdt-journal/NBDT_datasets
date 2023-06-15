@@ -20,30 +20,31 @@ def load_dataset(dataset_name, start_year=None, end_year=None, destination_path=
         dataset_content = response.read().decode('utf-8')
         dataset_dataframe = pd.read_csv(io.StringIO(dataset_content))
         
+        
         if destination_path is None and start_year is None and end_year is None:
                response = urllib.request.urlopen(dataset_url)
                dataset_content = response.read().decode('utf-8')
-               dataset_dataframe = pd.read_csv(io.StringIO(dataset_content))
+               dataset_dataframe = pd.read_csv(io.StringIO(dataset_content)) # reads the csv file
                print('Dataset downloaded successfully.') # print confirmation
                return dataset_dataframe
         elif destination_path != None and start_year is None and end_year is None:
                response = urllib.request.urlopen(dataset_url)
                dataset_content = response.read().decode('utf-8')
-               dataset_dataframe = pd.read_csv(io.StringIO(dataset_content))
+               dataset_dataframe = pd.read_csv(io.StringIO(dataset_content)) 
                dataset_dataframe.to_csv(destination_path, index=False)
-               print(f'Dataset downloaded successfully and saved to "{destination_path}".')
+               print(f'Dataset downloaded successfully and saved to "{destination_path}".')  # print confirmation
         elif destination_path != None and start_year and end_year:
                 response = urllib.request.urlopen(dataset_url)
                 dataset_content = response.read().decode('utf-8')
-                dataset_dataframe = pd.read_csv(io.StringIO(dataset_content))
+                dataset_dataframe = pd.read_csv(io.StringIO(dataset_content)) 
                 dataset_dataframe = filter(start_year, end_year, dataset_name, dataset_dataframe)
                 dataset_dataframe.to_csv(destination_path, index=False)
-                print(f'Dataset downloaded successfully and saved to "{destination_path}".')
+                print(f'Dataset downloaded successfully and saved to "{destination_path}".')  # print confirmation
         elif destination_path is None and start_year and end_year:
                response = urllib.request.urlopen(dataset_url)
                dataset_content = response.read().decode('utf-8')
-               dataset_dataframe = pd.read_csv(io.StringIO(dataset_content))
-               dataset_dataframe = filter(start_year, end_year, dataset_name, dataset_dataframe)
+               dataset_dataframe = pd.read_csv(io.StringIO(dataset_content))  
+               dataset_dataframe = filter(start_year, end_year, dataset_name, dataset_dataframe) # calling fucntion to return filtered dataset
                print('Dataset downloaded successfully.') # print confirmation
                return dataset_dataframe
 
@@ -51,7 +52,7 @@ def load_dataset(dataset_name, start_year=None, end_year=None, destination_path=
     else:
         print(f'Dataset "{dataset_name}" is not available.')
 
-def filter(start_year, end_year, dataset_name, dataset_dataframe):
+def filter(start_year, end_year, dataset_name, dataset_dataframe):   # function to filter dataset based on the given query
     if start_year in range(2018, 2024) and end_year in range(2018, 2024):
              
              if dataset_name == 'arxiv' and start_year and end_year:
