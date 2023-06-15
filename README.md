@@ -25,8 +25,8 @@ Currently the library has 4 datasets ready to use:
 To load your dataset use the following code:
 
 ```python
-
-data = load_dataset(dataset_name = 'arxiv', destination_path = 'arxiv.csv', start_year = 2018, end_year = 2023)
+from nbdt.datasets import load_dataset
+load_dataset(dataset_name = 'arxiv', destination_path = 'arxiv.csv', start_year = 2018, end_year = 2023)
 
 ```
 - If `destination_path` is not specified, then the dataset will be loaded as a pandas DataFrame to the specified variable.
