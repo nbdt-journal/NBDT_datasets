@@ -20,7 +20,9 @@ Currently the library has 4 datasets ready to use:
 
 `plos_one`: Has 18k papers from PLOS_ONE
 
-`medline`: Has 105k papers from the top 200 journals in the neuroscience field
+`medline_small`: Has 105k papers from the top 200 journals in the neuroscience field
+
+`medline_large`: Has 200k papers from MEDLINE
 
 To load your dataset use the following code:
 
