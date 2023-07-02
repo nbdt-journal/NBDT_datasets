@@ -39,6 +39,7 @@ load_dataset(dataset_name = 'arxiv', destination_path = 'arxiv.csv', start_year 
 
 To update your dataset, use the following code:
 ```python
+from nbdt.update import update_dataset
 update_dataset(dataset_name, start_date, end_date, destination_path, update)
 
 # Examples
