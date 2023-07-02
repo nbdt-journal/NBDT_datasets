@@ -12,7 +12,7 @@ pip install ./nbdt_lib
 
 # Load Datasets
 
-Currently the library has 4 datasets ready to use:
+Currently the library has 5 datasets ready to use:
 
 `arxiv`: Has nearly 3.5k papers
 
