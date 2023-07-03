@@ -240,6 +240,15 @@ def plos_one(c_date, destination_path, update, b2='2023-05-31'):
 
 
 def arxiv(c_date, destination_path, update, c_date2='2023-05-31'):
+        """
+    Collect papers from the arXiv source and update the dataset.
+
+    Args:
+        c_date (str): End date for collecting papers in the format 'yyyy-mm-dd'.
+        destination_path (str): File path to store the updated dataset.
+        update (bool): Flag indicating whether to update the source dataset.
+        c_date2 (str, optional): Start date for collecting papers in the format 'yyyy-mm-dd'. Default is '2023-05-31'.
+    """
     import arxiv
 
     # Perform the arXiv search with date filtering
