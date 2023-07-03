@@ -16,10 +16,10 @@ def update_dataset(dataset_name, end_date, destination_path, start_date=None, up
 
     Args:
         dataset_name (str): Name of the dataset.
-        end_date (str): End date for collecting papers in the format "dd-mm-yyyy".
+        end_date (str): End date for collecting papers in the format "yyyy-mm-dd".
         destination_path (str): File path to store the updated dataset.
-        start_date (str, optional): Start date for collecting papers in the format "dd-mm-yyyy". Default is None.
-        update (bool, optional): Flag indicating whether to update the source dataset. Default is False.
+        start_date (str, optional): The start date for collecting papers in the format "yyyy-mm-dd". The default is None.
+        update (bool, optional): Flag indicating whether to update the source dataset. The default is False.
     """
     if update != False and update != True:
       raise ValueError("update should be either True or False (by default it is False)")
@@ -236,7 +236,7 @@ def plos_one(c_date, destination_path, update, b2='2023-05-31'):
         print("The data is stored as: ", destination_path)
 
 
-import arxiv
+
 
 
 def arxiv(c_date, destination_path, update, c_date2='2023-05-31'):
