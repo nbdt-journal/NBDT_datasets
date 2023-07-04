@@ -240,7 +240,7 @@ def plos_one(c_date, destination_path, update, b2='2023-05-31'):
 
 
 def arxiv(c_date, destination_path, update, c_date2='2023-05-31'):
-        """
+    """
     Collect papers from the arXiv source and update the dataset.
 
     Args:
