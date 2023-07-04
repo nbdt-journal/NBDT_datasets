@@ -370,5 +370,3 @@ def arxiv(c_date, destination_path, update, c_date2="2023-05-31"):
         print("The source dataset is updated and is stored at:", destination_path)                     
             
 
-      arxiv_new3.to_csv(destination_path, index=False)
-      print("The source dataset is updated and is stored at:", destination_path)
