@@ -1,4 +1,4 @@
-# NBDT_DATASETS
+# NBDT_datasets
 ## A Comprehensive Library for Research Paper Recommendation and Dataset Management
 
 # Installation
