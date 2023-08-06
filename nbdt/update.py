@@ -91,8 +91,9 @@ def bioarxiv(a1, d1, update, b1="2023-01-01"):
         total = results1["messages"][0]["total"]
 
         print("Total number of papers:", total)
-
-        if total >= 100 and total <= 10000:
+        if total < 100:
+            print("Collecting Papers... Estimated Time: ~3 mins")
+        elif total >= 100 and total <= 10000:
             print("Collecting Papers... Estimated Time: ~6 mins")
         elif total > 10000:
             print("Collecting Papers... Estimated Time: 10 mins to 30 mins")
@@ -204,10 +205,12 @@ def plos_one(c_date, destination_path, update, b2="2023-05-31"):
             # Parse the response as JSON
             data = response.json()
             num = data["response"]["numFound"]
-            if num > 100 and num <= 10000:
-                print("Collecting Papers........ Est time: ~2mins")
+            if num < 100:
+                print("Collecting Papers........ Est time: ~10 seconds")
+            elif num > 100 and num <= 10000:
+                print("Collecting Papers........ Est time: ~2 mins")
             elif num > 10000:
-                print("Collecting Papers........ Est time: ~5mins")
+                print("Collecting Papers........ Est time: ~5 mins")
         else:
             # Print an error message
             print(f"Request failed with status code {response.status_code}")
